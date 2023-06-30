@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dialog {
+    transition: 0.3s ease all;
+}
+
+.dialog-enter-from .dialog-bg {
+    opacity: 0;
+}
+
+.dialog-leave-active .dialog-bg {
+    opacity: 0;
+}
+
+.dialog-enter-from .dialog-content,
+.dialog-leave-active .dialog-content {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+}
+
+.dialog-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.dialog-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    padding: 0.6rem 1rem;
+    will-change: contents;
+    transform-origin: center;
+    transition: all 0.3s ease-out;
+    background: white;
+    z-index: 2;
+    opacity: 1;
+    min-width: 200px;
+    max-width: 400px;
+
+    .dialog-header {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        border-bottom: solid 1px black;
+        padding: 0.5rem 0.3rem;
+        &.border-btm-alert {
+            border-bottom-color: #e12222;
+        }
+        .header-text {
+            line-height: 1.2;
+        }
+        img {
+            height: 40px;
+            width: 40px;
+        }
+        .img-alert {
+            filter: invert(35%) sepia(99%) saturate(4409%) hue-rotate(353deg) brightness(100%) contrast(107%);
+        }
+        .img-attention {
+            filter: invert(82%) sepia(20%) saturate(2769%) hue-rotate(5deg) brightness(98%) contrast(103%);
+        }
+    }
+    .dialog-body {
+        padding-top: 0.6rem;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.6rem;
+
+        .dialog-btn {
+            border-radius: 8px;
+            border: 2px solid transparent;
+            padding: 0.6em 1.2em;
+            font-size: 1em;
+            font-weight: 500;
+            font-family: inherit;
+            background-color: #d8d4d4;
+            cursor: pointer;
+            transition: border-color 0.25s;
+            flex: 1 1 0px;
+            max-width: 100px;
+            &.btn-alert {
+                background-color: #e12222;
+                color: white;
+            }
+            &.btn-ok {
+                background-color: #4a6df6;
+                color: white;
+                &:hover {
+                    border-color: #3b1dc2;
+                }
+            }
+            &:hover {
+                border-color: #646cff;
+            }
+            &:focus-visible {
+                outline: #24242d solid 2px;
+            }
+        }
+    }
+}
