@@ -1,6 +1,6 @@
 {
   "name": "vue-dialog-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "files": [
     "dist"
@@ -10,10 +10,17 @@
   "module": "./dist/vue-dialog-library.es.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-dialog-library.es.js",
-      "require": "./dist/vue-dialog-library.umd.js"
+      "import": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/vue-dialog-library.es.js"
+      },
+      "require": {
+        "types": "./dist/src/index.d.ts",
+        "default": "./dist/vue-dialog-library.umd.js"
+      }
     },
-    "./dist/styles.css": "./dist/style.css"
+    "./dist/styles.css": "./dist/style.css",
+    "./dist/src/index.d.ts": "./dist/src/index.d.ts"
   },
   "scripts": {
     "dev": "vite",
