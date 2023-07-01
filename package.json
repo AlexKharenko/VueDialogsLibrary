@@ -1,21 +1,36 @@
 {
-  "name": "jspopupslibrary",
-  "private": true,
-  "version": "0.0.0",
+  "name": "vue-dialog-library",
+  "version": "1.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/src/index.d.ts",
+  "main": "./dist/vue-dialog-library.umd.js",
+  "module": "./dist/vue-dialog-library.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-dialog-library.es.js",
+      "require": "./dist/vue-dialog-library.umd.js"
+    },
+    "./dist/styles.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@types/node": "^20.3.2",
     "@vitejs/plugin-vue": "^4.1.0",
     "sass": "^1.63.6",
     "typescript": "^5.0.2",
     "vite": "^4.3.9",
+    "vite-plugin-dts": "^3.0.2",
+    "vue": "^3.2.47",
     "vue-tsc": "^1.4.2"
   }
 }
