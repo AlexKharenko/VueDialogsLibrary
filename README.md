@@ -8,7 +8,7 @@ It allows you to call the dialog from code like ```window.alert()``` and wait fo
 
 ### npm
 ```
-npm install vue-dialogs-library
+npm install vue-dialog-library
 ```
 
 ## Usage
